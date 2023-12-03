@@ -5,12 +5,12 @@ let countOfZiro = 0;
 let countOfOverEls = 0;
 
 for (let i = 0; i < array.length; i++) {
-    (array[i] % 2 === 0 && typeof array[i] === 'number')? countOfEvenEls ++ : countOfOddEls ++;
-    if (typeof array[i] !== 'number'){
-        countOfOverEls ++;
-    }
-    if (array[i] === 0){
-        countOfZiro ++;
+    if (typeof array[i] !== 'number' && typeof array[i] !== NaN) {
+        if (array[i] === 0) {
+            countOfZiro++;
+        }
+        (array[i] % 2 === 0 && typeof array[i] === 'number') ? countOfEvenEls++ : countOfOddEls++;
+        countOfOverEls++;
     }
 }
 console.log(`в массиве чётных элементов ${countOfEvenEls}  и  нечётных элементов ${countOfOddEls}`);
